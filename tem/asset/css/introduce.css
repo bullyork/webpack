@@ -1,0 +1,35 @@
+.quickGuild {
+  margin: 0px auto 30px auto;
+  width: 1200px;
+}
+
+.quickGuild .quickGuild-list {
+  margin-top: 60px;
+}
+.quickGuild .quickGuild-list .quickguild-question {
+  height: 26px;
+  font-family: Roboto-Regular;
+  font-size: 20px;
+  line-height: 1.3;
+  color: #333333;
+  margin-bottom: 10px;
+}
+.quickGuild .quickGuild-list .quickGuild-answer-title {
+  width: 1188px;
+  height: 25px;
+  font-family: Roboto-Regular;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666666;
+}
+.quickGuild .quickGuild-list .quickGuild-answer {
+  margin-top: 5px;
+  width: 1200px;
+  font-family: Roboto-Regular;
+  font-size: 12px;
+  line-height: 1.9;
+  color: #666666;
+  margin-left: 20px;
+}
+
+/*# sourceMappingURL=introduce.css.map */

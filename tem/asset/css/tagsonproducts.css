@@ -1,0 +1,117 @@
+.tagsOnProductsPanel .productColumnsWrapper .productItemWrapper {
+  width: 288px;
+  margin-bottom: 16px;
+  vertical-align: top;
+}
+.tagsOnProductsPanel .productColumnsWrapper .productItemWrapper .imgWrapper {
+  width: 100%;
+  overflow: hidden;
+  display: block;
+}
+.tagsOnProductsPanel .productColumnsWrapper .productItemWrapper .imgWrapper > img {
+  -moz-transform-origin: center center 50%;
+  -ms-transform-origin: center center 50%;
+  -webkit-transform-origin: center center 50%;
+  transform-origin: center center 50%;
+  -moz-transition: all 500ms;
+  -o-transition: all 500ms;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+.tagsOnProductsPanel .productColumnsWrapper .productItemWrapper .imgWrapper > img:hover {
+  -moz-transform: scale(1.05) translate(5px, 0);
+  -ms-transform: scale(1.05) translate(5px, 0);
+  -webkit-transform: scale(1.05) translate(5px, 0);
+  transform: scale(1.05) translate(5px, 0);
+}
+.tagsOnProductsPanel .productColumnsWrapper .productItemWrapper .productInfoWrapper {
+  height: 70px;
+  background-color: white;
+  padding-left: 12px;
+  padding-right: 12px;
+  display: flex;
+  align-items: center;
+}
+.tagsOnProductsPanel .productColumnsWrapper .productItemWrapper .productInfoWrapper .productInfo {
+  width: 100%;
+}
+.tagsOnProductsPanel .productColumnsWrapper .productItemWrapper .productInfoWrapper a.name {
+  font-size: 16px;
+  color: #333333;
+  margin-bottom: 8px;
+  line-height: 1.2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+.tagsOnProductsPanel .productColumnsWrapper .productItemWrapper .productInfoWrapper .name:hover {
+  color: #999999;
+}
+.tagsOnProductsPanel .productColumnsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tagsOnProductsPanel .productColumnsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .price {
+  font-size: 18px;
+}
+.tagsOnProductsPanel .productColumnsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .price .real {
+  color: #333333;
+}
+.tagsOnProductsPanel .productColumnsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .price .origin {
+  color: #999;
+  text-decoration: line-through;
+  padding-left: 16px;
+}
+.tagsOnProductsPanel .productColumnsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .numbers {
+  color: #999999;
+  font-size: 16px;
+}
+.tagsOnProductsPanel .productColumnsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .numbers > .favorites {
+  padding-right: 6px;
+}
+.tagsOnProductsPanel .productColumnsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .numbers > .reviews {
+  padding-left: 12px;
+  padding-right: 6px;
+}
+
+.tagsOnProductsPanel .tagsSelectorWrapper {
+  background-color: white;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  height: 52px;
+  margin-bottom: 20px;
+}
+.tagsOnProductsPanel .tagsSelectorWrapper a.tagItem {
+  border-bottom: 3px solid white;
+  padding-left: 4px;
+  padding-right: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666666;
+  text-decoration: none;
+}
+.tagsOnProductsPanel .tagsSelectorWrapper a.tagItem.active, .tagsOnProductsPanel .tagsSelectorWrapper a:hover {
+  border-color: #ee303b;
+  color: #ee303b;
+  text-decoration: none;
+}
+
+.tagsOnProductsPanel {
+  margin: 0px auto 30px auto;
+  width: 1200px;
+}
+
+.tagsOnProductsPanel .productColumnsWrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.tagsOnProductsPanel .productColumnsWrapper .productsWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=tagsonproducts.css.map */

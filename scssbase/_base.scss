@@ -1,0 +1,128 @@
+
+/**
+ * mixins
+ */
+
+@mixin flexbox($direction, $x, $y, $wrap) {
+  display: flex;
+
+  @if $direction {
+    flex-direction: $direction;
+  }
+
+  @if $x {
+    justify-content: $x;
+  }
+
+  @if $y {
+    align-items: $y;
+  }
+
+  @if $wrap {
+    flex-wrap: $wrap;
+  }
+}
+
+@mixin griditem($row-start, $row-end, $column-start, $column-end) {
+  @if $row-start {
+    grid-row-start: $row-start;
+  }
+  @if $row-end {
+    grid-row-end: $row-end;
+  }
+  @if $column-start {
+    grid-column-start: $column-start;
+  }
+  @if $column-end {
+    grid-column-end: $column-end;
+  }
+}
+
+@mixin wordblock {
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin wordline {
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/**
+ * layout
+ */
+
+@mixin workarea {
+  flex: 1;
+  padding: 0px 20px;
+}
+
+$bg-green: #029379;
+$bg-light-green: #dff0d8;
+
+@mixin head-note {
+  .head {
+    width: 100%;
+
+    h2 {
+      color: $bg-green;
+      font-size: 22px;
+      margin: 10px 0;
+    }
+
+    ul {
+      background: $bg-light-green;
+      margin: 0 0 10px;
+      color: #3c763d;
+      padding: 10px;
+    }
+  }
+}
+
+@mixin light-border($dir) {
+  border-radius: 2px;
+
+  @if $dir  {
+    border-#{$dir}: #e8e8e8 solid 1px;
+  } @else {
+    border: #e8e8e8 solid 1px;
+  }
+}
+
+@mixin asterisk {
+  display: inline;
+  line-height: 24px;
+  padding-right:5px;
+  text-align: right;
+  position: relative;
+  top: 6px;
+  color: #f60;
+  font-size: 20px;
+}
+/**
+ * utils
+ */
+
+$base-font-size: 16px;
+
+@function parseInt($n) {
+  @return $n / ($n * 0 + 1);
+}
+
+@function rem($px) {
+  @if parseInt($px) == 0 {
+    @return 0;
+  }
+
+  @return (parseInt($px) / parseInt($base-font-size)) * 1rem;
+}
+
+/**
+ * vars
+ */
+$color-green: #006d00;
+$color-lightGreen: #bbd89e;
+$color-red: #ed3b32;

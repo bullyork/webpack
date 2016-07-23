@@ -1,0 +1,17 @@
+[{
+  "name": "Help FAQ",
+  "key": "_Help_CMS_FAQ_SG_en",
+  "area": "SG",
+  "lang": "en",
+  "path": "/Help/Faq",
+  "html":"your save data",
+  "ctype": "FAQ"
+},{
+  "name": "Help FAQ",
+  "key": "_Help_CMS_FAQ_SG_zh-CN",
+  "area": "SG",
+  "lang": "en",
+  "path": "/Help/Faq",
+  "html":"your save data",
+  "ctype": "FAQ"
+}]

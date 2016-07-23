@@ -1,0 +1,57 @@
+.fullPageWidthMobile {
+  overflow: hidden;
+  display: block;
+  padding-top: 0.36rem;
+  font-family: Helvetica Neue,Helvetica,sans-serif;
+}
+.fullPageWidthMobile .fullPageItem {
+  overflow: hidden;
+  position: relative;
+  height: 2.08rem;
+  padding: 0px 0px 0.32rem 0;
+}
+.fullPageWidthMobile .fullPageItem .itemLeft {
+  position: absolute;
+  left: 0.48rem;
+  top: 0.04rem;
+  height: 2rem;
+  width: 12rem;
+}
+.fullPageWidthMobile .fullPageItem .itemLeft img {
+  width: 2rem;
+  height: 2rem;
+  margin: auto;
+}
+.fullPageWidthMobile .fullPageItem .itemRight {
+  position: relative;
+  margin-left: 2.6rem;
+  display: block;
+  height: 2rem;
+  margin-top: 0.04rem;
+  padding-left: 10px;
+  padding-right: 10px;
+  line-height: 0.5rem;
+}
+.fullPageWidthMobile .fullPageItem .itemRight .fullPageName {
+  font-size: 0.28rem;
+  color: #333333;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-family: Helvetica Neue,Helvetica,sans-serif;
+}
+.fullPageWidthMobile .fullPageItem .itemRight .fullPageNamePrice {
+  color: #f93241;
+  font-size: 0.29rem;
+  display: block;
+  position: relative;
+  padding: 0px;
+  margin: 0px;
+  font-family: Helvetica Neue,Helvetica,sans-serif;
+}
+
+/*# sourceMappingURL=fullPageWidthMobile.css.map */

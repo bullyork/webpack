@@ -1,0 +1,83 @@
+import JsonRPC from "../common/jsonrpcToWebapi.js"
+import Config from "../common/config.js"
+
+var Collection = {
+	list:function(originCode,offset,limit,callbacks){
+		JsonRPC.do(
+			Config.API_URL,
+			"FeatureCollection.GetCollections",
+			{
+				originCode:originCode,
+				offset:offset,
+				limit:limit
+			},
+			callbacks
+		);
+	},
+	doSort:function(prevId,nextId,sortId,callbacks){
+		JsonRPC.do(
+			Config.API_URL,
+			"FeatureCollection.DoSort",
+			{prevId:prevId,nextId:nextId,sortId:sortId},
+			callbacks
+		);
+	},
+	detail:function(collectionId,callbacks){
+		JsonRPC.do(
+			Config.API_URL,
+			"FeatureCollection.GetCollection",
+			{collectionId:collectionId},
+			callbacks
+		)
+	},
+	updatePic:function(collectionId,imagekey,pickey,callbacks){
+		JsonRPC.do(
+			Config.API_URL,
+			"FeatureCollection.UpdatePic",
+			{collectionId:collectionId,imagekey:imagekey,pickey:pickey},
+			callbacks
+		)
+	},
+	updateName:function(collectionId,name,callbacks){
+		JsonRPC.do(
+			Config.API_URL,
+			"FeatureCollection.UpdateName",
+			{collectionId:collectionId,name:name},
+			callbacks
+		)
+	},
+	updateActive:function(collectionId,active,callbacks){
+		JsonRPC.do(
+			Config.API_URL,
+			"FeatureCollection.UpdateActive",
+			{collectionId:collectionId,active:active},
+			callbacks
+		)
+	},
+	add:function(name,originCode,callbacks){
+		JsonRPC.do(
+			Config.API_URL,
+			"FeatureCollection.AddCollection",
+			{name:name,originCode:originCode},
+			callbacks
+		)
+	},
+	UpdatePrice:function(collectionId,callbacks){
+        JsonRPC.do(
+        	Config.API_URL,
+        	"FeatureCollection.UpdatePrice",
+        	{collectionId:collectionId},
+        	callbacks
+        )
+    },
+    UpdatePrime:function(collectionId,isPrime,callbacks){
+    	JsonRPC.do(
+    		Config.API_URL,
+    		"FeatureCollection.UpdatePrime",
+    		{collectionId:collectionId,isPrime:isPrime},
+    		callbacks
+    	)
+    }
+}
+
+module.exports = Collection

@@ -1,0 +1,161 @@
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper:before, .bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper:after {
+  content: " ";
+  display: table;
+}
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper:after {
+  clear: both;
+}
+
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper .productsWrapper .productItemWrapper {
+  width: 288px;
+  margin-bottom: 16px;
+  vertical-align: top;
+}
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper .productsWrapper .productItemWrapper .imgWrapper {
+  width: 100%;
+  overflow: hidden;
+  display: block;
+}
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper .productsWrapper .productItemWrapper .imgWrapper > img {
+  -moz-transform-origin: center center 50%;
+  -ms-transform-origin: center center 50%;
+  -webkit-transform-origin: center center 50%;
+  transform-origin: center center 50%;
+  -moz-transition: all 500ms;
+  -o-transition: all 500ms;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper .productsWrapper .productItemWrapper .imgWrapper > img:hover {
+  -moz-transform: scale(1.05) translate(5px, 0);
+  -ms-transform: scale(1.05) translate(5px, 0);
+  -webkit-transform: scale(1.05) translate(5px, 0);
+  transform: scale(1.05) translate(5px, 0);
+}
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper .productsWrapper .productItemWrapper .productInfoWrapper {
+  height: 70px;
+  background-color: white;
+  padding-left: 12px;
+  padding-right: 12px;
+  display: flex;
+  align-items: center;
+}
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper .productsWrapper .productItemWrapper .productInfoWrapper .productInfo {
+  width: 100%;
+}
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper .productsWrapper .productItemWrapper .productInfoWrapper a.name {
+  font-size: 16px;
+  color: #333333;
+  margin-bottom: 8px;
+  line-height: 1.2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper .productsWrapper .productItemWrapper .productInfoWrapper .name:hover {
+  color: #999999;
+}
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper .productsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper .productsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .price {
+  font-size: 18px;
+}
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper .productsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .price .real {
+  color: #333333;
+}
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper .productsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .price .origin {
+  color: #999;
+  text-decoration: line-through;
+  padding-left: 16px;
+}
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper .productsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .numbers {
+  color: #999999;
+  font-size: 16px;
+}
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper .productsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .numbers > .favorites {
+  padding-right: 6px;
+}
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper .productsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .numbers > .reviews {
+  padding-left: 12px;
+  padding-right: 6px;
+}
+
+.bannerWithFourProductsPanel {
+  margin: 0px auto 30px auto;
+  width: 1200px;
+}
+
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper a.bannerWrapper {
+  display: block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper a.bannerWrapper > img {
+  width: 100%;
+  vertical-align: middle;
+  -moz-transform-origin: center center 50%;
+  -ms-transform-origin: center center 50%;
+  -webkit-transform-origin: center center 50%;
+  transform-origin: center center 50%;
+  -moz-transition: all 500ms;
+  -o-transition: all 500ms;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper a.bannerWrapper > img:hover {
+  -moz-transform: scale(1.05) translate(5px, 0);
+  -ms-transform: scale(1.05) translate(5px, 0);
+  -webkit-transform: scale(1.05) translate(5px, 0);
+  transform: scale(1.05) translate(5px, 0);
+}
+
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper {
+  padding: 15px;
+  margin-top: 15px;
+  background-color: white;
+  overflow: hidden;
+}
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper a.bannerWrapper {
+  float: left;
+  width: 564px;
+  line-height: 703px;
+  height: 703px;
+}
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper .productsWrapper {
+  float: right;
+  width: 606px;
+  margin: 0px -15px -15px 0px;
+}
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper .productsWrapper .productItemWrapper {
+  display: inline-block;
+  margin-right: 15px;
+}
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper .productsWrapper .productItemWrapper a.imgWrapper {
+  height: 288px;
+}
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper .productsWrapper .productItemWrapper .productInfoWrapper {
+  height: 32px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper .productsWrapper .productItemWrapper .productInfoWrapper a.name {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper .productsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .real {
+  font-size: 16px;
+}
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper .productsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .origin {
+  font-size: 12px;
+}
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper .productsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .numbers {
+  font-size: 12px;
+}
+.bannerWithFourProductsPanel .bannerWithFourProductsRowWrapper:nth-child(1) {
+  margin-top: 0px;
+}
+
+/*# sourceMappingURL=bannerWithFourProducts.css.map */

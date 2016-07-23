@@ -1,0 +1,223 @@
+.bannerProductPanel:before, .bannerProductPanel .productSwipePanel:before, .bannerProductPanel .productSwipePanel .productsSwipeWrapper:before, .bannerProductPanel:after, .bannerProductPanel .productSwipePanel:after, .bannerProductPanel .productSwipePanel .productsSwipeWrapper:after {
+  content: " ";
+  display: table;
+}
+.bannerProductPanel:after, .bannerProductPanel .productSwipePanel:after, .bannerProductPanel .productSwipePanel .productsSwipeWrapper:after {
+  clear: both;
+}
+
+.icon, .icon-arrow_left, .icon-arrow_right, .icon-arrow_left_hover, .bannerProductPanel .productSwipePanel .prevButton:hover .icon-arrow_left, .bannerProductPanel .productSwipePanel .nextButton:hover .icon-arrow_left, .icon-arrow_right_hover, .bannerProductPanel .productSwipePanel .prevButton:hover .icon-arrow_right, .bannerProductPanel .productSwipePanel .nextButton:hover .icon-arrow_right {
+  display: inline-block;
+  vertical-align: middle;
+  border: 0;
+  outline: 0;
+}
+
+.bannerProductPanel .productSwipePanel .productsSwipeWrapper .productsWrapper .productItemWrapper {
+  width: 288px;
+  margin-bottom: 16px;
+  vertical-align: top;
+}
+.bannerProductPanel .productSwipePanel .productsSwipeWrapper .productsWrapper .productItemWrapper .imgWrapper {
+  width: 100%;
+  overflow: hidden;
+  display: block;
+}
+.bannerProductPanel .productSwipePanel .productsSwipeWrapper .productsWrapper .productItemWrapper .imgWrapper > img {
+  -moz-transform-origin: center center 50%;
+  -ms-transform-origin: center center 50%;
+  -webkit-transform-origin: center center 50%;
+  transform-origin: center center 50%;
+  -moz-transition: all 500ms;
+  -o-transition: all 500ms;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+.bannerProductPanel .productSwipePanel .productsSwipeWrapper .productsWrapper .productItemWrapper .imgWrapper > img:hover {
+  -moz-transform: scale(1.05) translate(5px, 0);
+  -ms-transform: scale(1.05) translate(5px, 0);
+  -webkit-transform: scale(1.05) translate(5px, 0);
+  transform: scale(1.05) translate(5px, 0);
+}
+.bannerProductPanel .productSwipePanel .productsSwipeWrapper .productsWrapper .productItemWrapper .productInfoWrapper {
+  height: 70px;
+  background-color: white;
+  padding-left: 12px;
+  padding-right: 12px;
+  display: flex;
+  align-items: center;
+}
+.bannerProductPanel .productSwipePanel .productsSwipeWrapper .productsWrapper .productItemWrapper .productInfoWrapper .productInfo {
+  width: 100%;
+}
+.bannerProductPanel .productSwipePanel .productsSwipeWrapper .productsWrapper .productItemWrapper .productInfoWrapper a.name {
+  font-size: 16px;
+  color: #333333;
+  margin-bottom: 8px;
+  line-height: 1.2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+.bannerProductPanel .productSwipePanel .productsSwipeWrapper .productsWrapper .productItemWrapper .productInfoWrapper .name:hover {
+  color: #999999;
+}
+.bannerProductPanel .productSwipePanel .productsSwipeWrapper .productsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bannerProductPanel .productSwipePanel .productsSwipeWrapper .productsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .price {
+  font-size: 18px;
+}
+.bannerProductPanel .productSwipePanel .productsSwipeWrapper .productsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .price .real {
+  color: #333333;
+}
+.bannerProductPanel .productSwipePanel .productsSwipeWrapper .productsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .price .origin {
+  color: #999;
+  text-decoration: line-through;
+  padding-left: 16px;
+}
+.bannerProductPanel .productSwipePanel .productsSwipeWrapper .productsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .numbers {
+  color: #999999;
+  font-size: 16px;
+}
+.bannerProductPanel .productSwipePanel .productsSwipeWrapper .productsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .numbers > .favorites {
+  padding-right: 6px;
+}
+.bannerProductPanel .productSwipePanel .productsSwipeWrapper .productsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .numbers > .reviews {
+  padding-left: 12px;
+  padding-right: 6px;
+}
+
+.bannerProductsWrapper, .bannerProductPanel {
+  margin: 0px auto 30px auto;
+  width: 1200px;
+}
+
+.bannerProductPanel a.bannerWrapper {
+  display: block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+.bannerProductPanel a.bannerWrapper > img {
+  width: 100%;
+  vertical-align: middle;
+  -moz-transform-origin: center center 50%;
+  -ms-transform-origin: center center 50%;
+  -webkit-transform-origin: center center 50%;
+  transform-origin: center center 50%;
+  -moz-transition: all 500ms;
+  -o-transition: all 500ms;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+.bannerProductPanel a.bannerWrapper > img:hover {
+  -moz-transform: scale(1.05) translate(5px, 0);
+  -ms-transform: scale(1.05) translate(5px, 0);
+  -webkit-transform: scale(1.05) translate(5px, 0);
+  transform: scale(1.05) translate(5px, 0);
+}
+
+.normal-sprite, .icon-arrow_left, .icon-arrow_right, .icon-arrow_left_hover, .bannerProductPanel .productSwipePanel .prevButton:hover .icon-arrow_left, .bannerProductPanel .productSwipePanel .nextButton:hover .icon-arrow_left, .icon-arrow_right_hover, .bannerProductPanel .productSwipePanel .prevButton:hover .icon-arrow_right, .bannerProductPanel .productSwipePanel .nextButton:hover .icon-arrow_right {
+  background-image: url('../images/normal-sc00a1d89b7.png');
+  background-repeat: no-repeat;
+}
+
+.icon-arrow_left {
+  background-position: 0 0;
+  width: 14px;
+  height: 27px;
+}
+.icon-arrow_left:hover, .icon-arrow_left.arrow_left-hover {
+  background-position: 0 -37px;
+}
+
+.icon-arrow_right {
+  background-position: 0 -74px;
+  width: 14px;
+  height: 27px;
+}
+.icon-arrow_right:hover, .icon-arrow_right.arrow_right-hover {
+  background-position: 0 -111px;
+}
+
+.icon-arrow_left_hover, .bannerProductPanel .productSwipePanel .prevButton:hover .icon-arrow_left, .bannerProductPanel .productSwipePanel .nextButton:hover .icon-arrow_left {
+  background-position: 0 -37px;
+  width: 14px;
+  height: 27px;
+}
+
+.icon-arrow_right_hover, .bannerProductPanel .productSwipePanel .prevButton:hover .icon-arrow_right, .bannerProductPanel .productSwipePanel .nextButton:hover .icon-arrow_right {
+  background-position: 0 -111px;
+  width: 14px;
+  height: 27px;
+}
+
+.bannerProductsWrapper > .bannerProductPanel:last-child {
+  margin-bottom: 0px;
+}
+
+.bannerProductPanel {
+  height: 356px;
+  margin-bottom: 15px;
+}
+.bannerProductPanel a.bannerWrapper {
+  overflow: hidden;
+  width: 345px;
+  height: 356px;
+  line-height: 356px;
+  float: left;
+}
+.bannerProductPanel .productSwipePanel {
+  float: left;
+  overflow: hidden;
+  width: 840px;
+  margin-left: 15px;
+  position: relative;
+  height: 100%;
+}
+.bannerProductPanel .productSwipePanel .productsSwipeWrapper {
+  width: 4200px;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  z-index: 1;
+}
+.bannerProductPanel .productSwipePanel .productsSwipeWrapper .productsWrapper {
+  float: left;
+  width: 855px;
+  margin-right: -15px;
+}
+.bannerProductPanel .productSwipePanel .productsSwipeWrapper .productsWrapper .productItemWrapper {
+  width: 270px;
+  margin-right: 15px;
+  margin-bottom: 0px;
+  display: inline-block;
+}
+.bannerProductPanel .productSwipePanel .productsSwipeWrapper .productsWrapper .productItemWrapper .imgWrapper {
+  height: 270px;
+}
+.bannerProductPanel .productSwipePanel .productsSwipeWrapper .productsWrapper .productItemWrapper .productInfoWrapper {
+  height: 86px;
+}
+.bannerProductPanel .productSwipePanel .prevButton, .bannerProductPanel .productSwipePanel .nextButton {
+  width: 34px;
+  height: 105px;
+  line-height: 105px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 2;
+  top: 100px;
+  cursor: pointer;
+}
+.bannerProductPanel .productSwipePanel .prevButton {
+  left: 0px;
+  text-align: center;
+}
+.bannerProductPanel .productSwipePanel .nextButton {
+  right: 0px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=bannerproduct.css.map */

@@ -1,0 +1,90 @@
+.productCommonBanner {
+  overflow: hidden;
+  width: 7.5rem;
+  display: inline-block;
+  font-family: Helvetica Neue,Helvetica,sans-serif;
+}
+.productCommonBanner .ProductItemLeft {
+  position: relative;
+  width: 3.7rem;
+  float: left;
+  background-color: white;
+  margin-bottom: 0.1rem;
+}
+.productCommonBanner .ProductItemLeft .imgdiv {
+  width: 3.7rem;
+  height: 3.7rem;
+  display: flex;
+  vertical-align: middle;
+  position: relative;
+}
+.productCommonBanner .ProductItemLeft .imgdiv img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: auto;
+}
+.productCommonBanner .ProductItemLeft .presentprice {
+  font-size: 0.64rem;
+  padding: 0.32rem 0.1rem 0.13rem 0.1rem;
+}
+.productCommonBanner .ProductItemLeft .presentprice .productname {
+  font-size: 0.28rem;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  /* height: 30px; */
+  /* line-height: 30px; */
+  margin-bottom: 0.15rem;
+}
+.productCommonBanner .ProductItemLeft .presentprice .productPrice {
+  font-size: 0.3rem;
+  color: #f93241;
+  text-align: left;
+}
+.productCommonBanner .ProductItemRight {
+  margin-left: 0.1rem;
+  position: relative;
+  width: 3.7rem;
+  float: left;
+  background-color: white;
+  margin-bottom: 0.1rem;
+}
+.productCommonBanner .ProductItemRight .imgdiv {
+  width: 3.7rem;
+  height: 3.7rem;
+  display: flex;
+  vertical-align: middle;
+  position: relative;
+}
+.productCommonBanner .ProductItemRight .imgdiv img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: auto;
+}
+.productCommonBanner .ProductItemRight .presentprice {
+  font-size: 0.64rem;
+  padding: 0.32rem 0.1rem 0.13rem 0.1rem;
+}
+.productCommonBanner .ProductItemRight .presentprice .productname {
+  font-size: 0.28rem;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  /* height: 30px; */
+  /* line-height: 30px; */
+  margin-bottom: 0.15rem;
+}
+.productCommonBanner .ProductItemRight .presentprice .productPrice {
+  font-size: 0.3rem;
+  color: #f93241;
+  text-align: left;
+  font-family: Helvetica Neue,Helvetica,sans-serif;
+}
+
+/*# sourceMappingURL=productCommon.css.map */

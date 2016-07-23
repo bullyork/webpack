@@ -1,0 +1,213 @@
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel:before, .tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel:after {
+  content: " ";
+  display: table;
+}
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel:after {
+  clear: both;
+}
+
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel .productItemsWrapper .productItemWrapper {
+  width: 288px;
+  margin-bottom: 16px;
+  vertical-align: top;
+}
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel .productItemsWrapper .productItemWrapper .imgWrapper {
+  width: 100%;
+  overflow: hidden;
+  display: block;
+}
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel .productItemsWrapper .productItemWrapper .imgWrapper > img {
+  -moz-transform-origin: center center 50%;
+  -ms-transform-origin: center center 50%;
+  -webkit-transform-origin: center center 50%;
+  transform-origin: center center 50%;
+  -moz-transition: all 500ms;
+  -o-transition: all 500ms;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel .productItemsWrapper .productItemWrapper .imgWrapper > img:hover {
+  -moz-transform: scale(1.05) translate(5px, 0);
+  -ms-transform: scale(1.05) translate(5px, 0);
+  -webkit-transform: scale(1.05) translate(5px, 0);
+  transform: scale(1.05) translate(5px, 0);
+}
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel .productItemsWrapper .productItemWrapper .productInfoWrapper {
+  height: 70px;
+  background-color: white;
+  padding-left: 12px;
+  padding-right: 12px;
+  display: flex;
+  align-items: center;
+}
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel .productItemsWrapper .productItemWrapper .productInfoWrapper .productInfo {
+  width: 100%;
+}
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel .productItemsWrapper .productItemWrapper .productInfoWrapper a.name {
+  font-size: 16px;
+  color: #333333;
+  margin-bottom: 8px;
+  line-height: 1.2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel .productItemsWrapper .productItemWrapper .productInfoWrapper .name:hover {
+  color: #999999;
+}
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel .productItemsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel .productItemsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .price {
+  font-size: 18px;
+}
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel .productItemsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .price .real {
+  color: #333333;
+}
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel .productItemsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .price .origin {
+  color: #999;
+  text-decoration: line-through;
+  padding-left: 16px;
+}
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel .productItemsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .numbers {
+  color: #999999;
+  font-size: 16px;
+}
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel .productItemsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .numbers > .favorites {
+  padding-right: 6px;
+}
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel .productItemsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .numbers > .reviews {
+  padding-left: 12px;
+  padding-right: 6px;
+}
+
+.tagBannerProductPanel .tagsSelectorWrapper {
+  background-color: white;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  height: 52px;
+  margin-bottom: 20px;
+}
+.tagBannerProductPanel .tagsSelectorWrapper a.tagItem {
+  border-bottom: 3px solid white;
+  padding-left: 4px;
+  padding-right: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666666;
+  text-decoration: none;
+}
+.tagBannerProductPanel .tagsSelectorWrapper a.tagItem.active, .tagBannerProductPanel .tagsSelectorWrapper a:hover {
+  border-color: #ee303b;
+  color: #ee303b;
+  text-decoration: none;
+}
+
+.tagBannerProductPanel .tagNameWrapper {
+  line-height: 78px;
+  height: 78px;
+  text-align: center;
+  vertical-align: middle;
+}
+.tagBannerProductPanel .tagNameWrapper .line {
+  width: 140px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.tagBannerProductPanel .tagNameWrapper .line .strightLine {
+  width: 134px;
+  height: 1px;
+  display: inline-block;
+  background-color: #333333;
+  vertical-align: middle;
+}
+.tagBannerProductPanel .tagNameWrapper .line .circle {
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  display: inline-block;
+  background-color: #333333;
+  vertical-align: middle;
+}
+.tagBannerProductPanel .tagNameWrapper .name {
+  display: inline-block;
+  font-size: 24px;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.tagBannerProductPanel {
+  margin: 0px auto 30px auto;
+  width: 1200px;
+}
+
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel a.bannerWrapper {
+  display: block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel a.bannerWrapper > img {
+  width: 100%;
+  vertical-align: middle;
+  -moz-transform-origin: center center 50%;
+  -ms-transform-origin: center center 50%;
+  -webkit-transform-origin: center center 50%;
+  transform-origin: center center 50%;
+  -moz-transition: all 500ms;
+  -o-transition: all 500ms;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel a.bannerWrapper > img:hover {
+  -moz-transform: scale(1.05) translate(5px, 0);
+  -ms-transform: scale(1.05) translate(5px, 0);
+  -webkit-transform: scale(1.05) translate(5px, 0);
+  transform: scale(1.05) translate(5px, 0);
+}
+
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel {
+  margin-top: 15px;
+}
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel a.bannerWrapper {
+  width: 340px;
+  height: 541px;
+  line-height: 541px;
+  float: left;
+}
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel .productItemsWrapper {
+  width: 860px;
+  height: 541px;
+  margin-right: -15px;
+  margin-bottom: -15px;
+  float: right;
+  vertical-align: top;
+}
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel .productItemsWrapper .productItemWrapper {
+  display: inline-block;
+  width: 200px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel .productItemsWrapper .productItemWrapper .imgWrapper {
+  width: 200px;
+  height: 200px;
+}
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel .productItemsWrapper .productItemWrapper .productInfoWrapper {
+  height: 63px;
+}
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel .productItemsWrapper .productItemWrapper .productInfoWrapper a.name {
+  font-size: 14px;
+}
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel .productItemsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers span.real {
+  font-size: 16px;
+}
+.tagBannerProductPanel .multiPanelWrapper .bannerAndProductsPanel .productItemsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers span.origin {
+  font-size: 16px;
+  text-decoration: line-through;
+}
+
+/*# sourceMappingURL=tagBannerWithEightProductsPerGroup.css.map */

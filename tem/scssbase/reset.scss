@@ -1,0 +1,39 @@
+
+@import "./_base";
+
+* {
+  vertical-align: baseline;
+  box-sizing: border-box;
+  font-size: 100%;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  min-width: $window-min-width;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, li {
+  list-style: none;
+}
+
+// antd 搜索选中 的 placeholder, 使其表现的像默认值
+.fake-def-val {
+  .ant-select-search__field__placeholder {
+    color: #666;
+  }
+}
+
+.ant-form-item {
+  @include flexbox(row, space-between, center, null);
+}
