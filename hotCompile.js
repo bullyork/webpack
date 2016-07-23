@@ -1,16 +1,18 @@
+'use strict'
+
 const fs = require("fs")
 const path = require('path')
-const express = require('express')
 const joindir = p => path.join(__dirname, p)
-var config = require('./webpack.hot')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+let config = require('./webpack.build')
+const commons = ['babel/polyfill', 'whatwg-fetch']
 const webpack = require("webpack")
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const readline = require('readline')
-const app = express()
-const commons = ['webpack-hot-middleware/client', 'babel/polyfill', 'whatwg-fetch']
-process.env.NODE_ENV='development'
+process.env.NODE_ENV='production'
 
 fs.readdir(joindir('view'),function(err, files){
-   var toBuildArray = []
+   let toBuildArray = []
    console.log('可编译模块：')
    if (err) {
        return console.error(err);
@@ -29,22 +31,24 @@ fs.readdir(joindir('view'),function(err, files){
    rl.question('which do you want to compile? ', (answer) => {
     const toBuildString = toBuildArray.join(',')
     if(toBuildString.indexOf(answer)!= -1){
-      console.log('hot build the module:', answer);
+      console.log('build the module:', answer);
       config.entry[answer] = [...commons, joindir('view/'+answer)]
-      const compiler = webpack(config)
-      app.use(require('webpack-dev-middleware')(compiler, {
-        publicPath: config.output.publicPath,
-        noInfo: true
-      }))
-      app.use(require('webpack-hot-middleware')(compiler))
-      app.use(express.static(__dirname))
-      app.listen(8090, err => {
-        if (err) {
-          return console.error(err)
-        }
-
-        console.info('Listening at http://localhost:8090')
-      })
+      config.plugins = [
+        new ExtractTextPlugin('[name].css'),
+        new HtmlWebpackPlugin({ 
+            inject: false,
+            key:answer,
+            filename: answer+'.html',
+            template: 'template/template.html'
+        })
+      ]
+      webpack(config, function(err, stats) {
+        if (err) { console.log('webpack:build', err) }
+        console.log('[webpack:build]', stats.toString({
+            chunks: false, // Makes the build much quieter
+            colors: true
+        }));
+      });
     }else{
       console.log('没有那个模块，请擦亮钛合金')
     }

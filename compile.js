@@ -1,8 +1,10 @@
+'use strict'
+
 const fs = require("fs")
 const path = require('path')
 const joindir = p => path.join(__dirname, p)
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-var config = require('./webpack.build')
+let config = require('./webpack.build')
 const commons = ['babel/polyfill', 'whatwg-fetch']
 const webpack = require("webpack")
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -10,7 +12,7 @@ const readline = require('readline')
 process.env.NODE_ENV='production'
 
 fs.readdir(joindir('view'),function(err, files){
-   var toBuildArray = []
+   let toBuildArray = []
    console.log('可编译模块：')
    if (err) {
        return console.error(err);
