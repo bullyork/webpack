@@ -1,0 +1,102 @@
+.headerMobile {
+  width: 100%;
+  height: 1.64rem;
+  position: fixed;
+  top: 0px;
+  z-index: 9999;
+}
+.headerMobile .container {
+  width: 100%;
+  height: 100%;
+}
+.headerMobile .container .navbar-header {
+  position: relative;
+  height: 0.92rem;
+  background-color: #ffffff;
+  padding: 0.14rem 0 0.226rem 0.24rem;
+  box-sizing: border-box;
+}
+.headerMobile .container .navbar-header .navbar-toggle {
+  position: relative;
+  background-color: transparent;
+  background-image: none;
+  width: 4.99rem;
+  height: 0.554rem;
+}
+.headerMobile .container .navbar-header .navbar-toggle img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.headerMobile .container .navbar-header .navbar-toggle-right {
+  position: absolute;
+  right: 20px;
+  float: right;
+  height: 24px;
+  width: 24px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: white;
+  top: 0.14rem;
+  outline: none;
+}
+.headerMobile .container .navbar-header .navbar-toggle-right .sr-only {
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.headerMobile .container .navbar-header .navbar-toggle-right .sr-only:nth-child(2) {
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: 4px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.headerMobile .container .navbar-header .navbar-toggle-right .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #777;
+}
+.headerMobile .container .navbar-header .navbar-toggle-right .icon-bar:nth-child(2) {
+  display: block;
+  width: 22px;
+  height: 2px;
+  margin-top: 4px;
+  border-radius: 1px;
+  background-color: #777;
+}
+.headerMobile .container .navbar-header .navbar-toggle-right .icon-bar:nth-child(3) {
+  display: block;
+  width: 22px;
+  height: 2px;
+  margin-top: 5px;
+  border-radius: 1px;
+  background-color: #777;
+}
+.headerMobile .container .register-button {
+  width: 100%;
+  height: 0.72rem;
+  background-color: #ff5a00;
+  font-size: 0.28rem;
+  text-align: center;
+  line-height: 0.72rem;
+}
+.headerMobile .container .register-button a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  text-decoration: initial;
+  color: white;
+}
+
+/*# sourceMappingURL=headerMobile.css.map */

@@ -1,0 +1,104 @@
+.productsFourPerGroupPanel .productsWrapper .productItemWrapper {
+  width: 288px;
+  margin-bottom: 16px;
+  vertical-align: top;
+}
+.productsFourPerGroupPanel .productsWrapper .productItemWrapper .imgWrapper {
+  width: 100%;
+  overflow: hidden;
+  display: block;
+}
+.productsFourPerGroupPanel .productsWrapper .productItemWrapper .imgWrapper > img {
+  -moz-transform-origin: center center 50%;
+  -ms-transform-origin: center center 50%;
+  -webkit-transform-origin: center center 50%;
+  transform-origin: center center 50%;
+  -moz-transition: all 500ms;
+  -o-transition: all 500ms;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+.productsFourPerGroupPanel .productsWrapper .productItemWrapper .imgWrapper > img:hover {
+  -moz-transform: scale(1.05) translate(5px, 0);
+  -ms-transform: scale(1.05) translate(5px, 0);
+  -webkit-transform: scale(1.05) translate(5px, 0);
+  transform: scale(1.05) translate(5px, 0);
+}
+.productsFourPerGroupPanel .productsWrapper .productItemWrapper .productInfoWrapper {
+  height: 70px;
+  background-color: white;
+  padding-left: 12px;
+  padding-right: 12px;
+  display: flex;
+  align-items: center;
+}
+.productsFourPerGroupPanel .productsWrapper .productItemWrapper .productInfoWrapper .productInfo {
+  width: 100%;
+}
+.productsFourPerGroupPanel .productsWrapper .productItemWrapper .productInfoWrapper a.name {
+  font-size: 16px;
+  color: #333333;
+  margin-bottom: 8px;
+  line-height: 1.2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+.productsFourPerGroupPanel .productsWrapper .productItemWrapper .productInfoWrapper .name:hover {
+  color: #999999;
+}
+.productsFourPerGroupPanel .productsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.productsFourPerGroupPanel .productsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .price {
+  font-size: 18px;
+}
+.productsFourPerGroupPanel .productsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .price .real {
+  color: #333333;
+}
+.productsFourPerGroupPanel .productsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .price .origin {
+  color: #999;
+  text-decoration: line-through;
+  padding-left: 16px;
+}
+.productsFourPerGroupPanel .productsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .numbers {
+  color: #999999;
+  font-size: 16px;
+}
+.productsFourPerGroupPanel .productsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .numbers > .favorites {
+  padding-right: 6px;
+}
+.productsFourPerGroupPanel .productsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .numbers > .reviews {
+  padding-left: 12px;
+  padding-right: 6px;
+}
+
+.productsFourPerGroupPanel {
+  margin: 0px auto 30px auto;
+  width: 1200px;
+}
+
+.productsFourPerGroupPanel .productsWrapper {
+  margin: 0px -16px 16px 0px;
+}
+.productsFourPerGroupPanel .productsWrapper .productItemWrapper {
+  display: inline-block;
+  margin-right: 16px;
+}
+.productsFourPerGroupPanel .productsWrapper .productItemWrapper a.imgWrapper {
+  height: 288px;
+}
+.productsFourPerGroupPanel .productsWrapper .productItemWrapper .productInfoWrapper {
+  height: 88px;
+}
+.productsFourPerGroupPanel .productsWrapper .productItemWrapper .productInfoWrapper a.name {
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+.productsFourPerGroupPanel .productsWrapper .productItemWrapper .productInfoWrapper .priceAndNumbers .price {
+  font-size: 20px;
+}
+
+/*# sourceMappingURL=productsFourPerGroup.css.map */

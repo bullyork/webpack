@@ -1,0 +1,161 @@
+.tagProductFour:before, .tagProductFour:after {
+  content: " ";
+  display: table;
+}
+.tagProductFour:after {
+  clear: both;
+}
+
+.tagProductFour .multiPanelWrapper .productsPanel .productItemWrapper {
+  width: 288px;
+  margin-bottom: 16px;
+  vertical-align: top;
+}
+.tagProductFour .multiPanelWrapper .productsPanel .productItemWrapper .imgWrapper {
+  width: 100%;
+  overflow: hidden;
+  display: block;
+}
+.tagProductFour .multiPanelWrapper .productsPanel .productItemWrapper .imgWrapper > img {
+  -moz-transform-origin: center center 50%;
+  -ms-transform-origin: center center 50%;
+  -webkit-transform-origin: center center 50%;
+  transform-origin: center center 50%;
+  -moz-transition: all 500ms;
+  -o-transition: all 500ms;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+.tagProductFour .multiPanelWrapper .productsPanel .productItemWrapper .imgWrapper > img:hover {
+  -moz-transform: scale(1.05) translate(5px, 0);
+  -ms-transform: scale(1.05) translate(5px, 0);
+  -webkit-transform: scale(1.05) translate(5px, 0);
+  transform: scale(1.05) translate(5px, 0);
+}
+.tagProductFour .multiPanelWrapper .productsPanel .productItemWrapper .productInfoWrapper {
+  height: 70px;
+  background-color: white;
+  padding-left: 12px;
+  padding-right: 12px;
+  display: flex;
+  align-items: center;
+}
+.tagProductFour .multiPanelWrapper .productsPanel .productItemWrapper .productInfoWrapper .productInfo {
+  width: 100%;
+}
+.tagProductFour .multiPanelWrapper .productsPanel .productItemWrapper .productInfoWrapper a.name {
+  font-size: 16px;
+  color: #333333;
+  margin-bottom: 8px;
+  line-height: 1.2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+.tagProductFour .multiPanelWrapper .productsPanel .productItemWrapper .productInfoWrapper .name:hover {
+  color: #999999;
+}
+.tagProductFour .multiPanelWrapper .productsPanel .productItemWrapper .productInfoWrapper .priceAndNumbers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tagProductFour .multiPanelWrapper .productsPanel .productItemWrapper .productInfoWrapper .priceAndNumbers .price {
+  font-size: 18px;
+}
+.tagProductFour .multiPanelWrapper .productsPanel .productItemWrapper .productInfoWrapper .priceAndNumbers .price .real {
+  color: #333333;
+}
+.tagProductFour .multiPanelWrapper .productsPanel .productItemWrapper .productInfoWrapper .priceAndNumbers .price .origin {
+  color: #999;
+  text-decoration: line-through;
+  padding-left: 16px;
+}
+.tagProductFour .multiPanelWrapper .productsPanel .productItemWrapper .productInfoWrapper .priceAndNumbers .numbers {
+  color: #999999;
+  font-size: 16px;
+}
+.tagProductFour .multiPanelWrapper .productsPanel .productItemWrapper .productInfoWrapper .priceAndNumbers .numbers > .favorites {
+  padding-right: 6px;
+}
+.tagProductFour .multiPanelWrapper .productsPanel .productItemWrapper .productInfoWrapper .priceAndNumbers .numbers > .reviews {
+  padding-left: 12px;
+  padding-right: 6px;
+}
+
+.tagProductFour .tagsSelectorWrapper {
+  background-color: white;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  height: 52px;
+  margin-bottom: 20px;
+}
+.tagProductFour .tagsSelectorWrapper a.tagItem {
+  border-bottom: 3px solid white;
+  padding-left: 4px;
+  padding-right: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666666;
+  text-decoration: none;
+}
+.tagProductFour .tagsSelectorWrapper a.tagItem.active, .tagProductFour .tagsSelectorWrapper a:hover {
+  border-color: #ee303b;
+  color: #ee303b;
+  text-decoration: none;
+}
+
+.tagProductFour .tagNameWrapper {
+  line-height: 78px;
+  height: 78px;
+  text-align: center;
+  vertical-align: middle;
+}
+.tagProductFour .tagNameWrapper .line {
+  width: 140px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.tagProductFour .tagNameWrapper .line .strightLine {
+  width: 134px;
+  height: 1px;
+  display: inline-block;
+  background-color: #333333;
+  vertical-align: middle;
+}
+.tagProductFour .tagNameWrapper .line .circle {
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  display: inline-block;
+  background-color: #333333;
+  vertical-align: middle;
+}
+.tagProductFour .tagNameWrapper .name {
+  display: inline-block;
+  font-size: 24px;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.tagProductFour {
+  padding-bottom: 30px;
+}
+.tagProductFour .tagsSelectorWrapper {
+  margin-bottom: 0px;
+}
+.tagProductFour .multiPanelWrapper .productsPanel {
+  margin-right: -15px;
+}
+.tagProductFour .multiPanelWrapper .productsPanel .productItemWrapper {
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 0px;
+}
+.tagProductFour .multiPanelWrapper .productsPanel .productItemWrapper .productInfoWrapper {
+  height: 88px;
+}
+
+/*# sourceMappingURL=tagproductfour.css.map */

@@ -1,0 +1,145 @@
+.countDownClockPanel .list-wrapper:before, .countDownClockPanel .countDownClockProductItem .productInfoWrapper .productInfo .priceAndStockWrapper:before, .countDownClockPanel .list-wrapper:after, .countDownClockPanel .countDownClockProductItem .productInfoWrapper .productInfo .priceAndStockWrapper:after {
+  content: " ";
+  display: table;
+}
+.countDownClockPanel .list-wrapper:after, .countDownClockPanel .countDownClockProductItem .productInfoWrapper .productInfo .priceAndStockWrapper:after {
+  clear: both;
+}
+
+.countDownClockPanel {
+  margin: 0px auto 30px auto;
+  width: 1200px;
+}
+
+.countDownClockPanel .list-wrapper {
+  margin-right: -15px;
+}
+.countDownClockPanel .countDownClockProductItem {
+  width: 390px;
+  height: 504px;
+  background-color: white;
+  margin-bottom: 15px;
+  margin-right: 15px;
+  display: inline-block;
+  position: relative;
+}
+.countDownClockPanel .countDownClockProductItem a.productImageWrapper {
+  position: relative;
+  width: 390px;
+  height: 390px;
+  color: white;
+  font-size: 24px;
+  display: block;
+}
+.countDownClockPanel .countDownClockProductItem a.productImageWrapper .remainingWrapper {
+  bottom: 0px;
+  background-color: rgba(249, 50, 65, 0.8);
+  height: 60px;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  z-index: 1;
+  text-align: center;
+  line-height: 60px;
+}
+.countDownClockPanel .countDownClockProductItem a.productImageWrapper .remainingWrapper .remainText {
+  display: inline-block;
+  vertical-align: middle;
+}
+.countDownClockPanel .countDownClockProductItem a.productImageWrapper .aboutToStartWrapper {
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 60px;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  z-index: 1;
+  text-align: center;
+  line-height: 60px;
+  color: white;
+}
+.countDownClockPanel .countDownClockProductItem .productInfoWrapper {
+  height: 114px;
+  width: 100%;
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 114px;
+}
+.countDownClockPanel .countDownClockProductItem .productInfoWrapper .productInfo {
+  width: 100%;
+  height: 66px;
+  display: inline-block;
+}
+.countDownClockPanel .countDownClockProductItem .productInfoWrapper .productInfo a.name {
+  padding-left: 12px;
+  padding-right: 12px;
+  color: #333333;
+  font-size: 18px;
+  line-height: 1.2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 20px;
+  display: block;
+}
+.countDownClockPanel .countDownClockProductItem .productInfoWrapper .productInfo .priceAndStockWrapper {
+  padding-left: 12px;
+  padding-right: 12px;
+  line-height: 22px;
+}
+.countDownClockPanel .countDownClockProductItem .productInfoWrapper .productInfo .priceAndStockWrapper .priceWrapper {
+  float: left;
+}
+.countDownClockPanel .countDownClockProductItem .productInfoWrapper .productInfo .priceAndStockWrapper .priceWrapper .origin {
+  color: #999999;
+  font-size: 14px;
+  text-decoration: line-through;
+  vertical-align: middle;
+  display: inline-block;
+  margin-left: 10px;
+}
+.countDownClockPanel .countDownClockProductItem .productInfoWrapper .productInfo .priceAndStockWrapper .priceWrapper .promotion {
+  color: #f93241;
+  font-size: 20px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.countDownClockPanel .countDownClockProductItem .productInfoWrapper .productInfo .priceAndStockWrapper .stock {
+  float: right;
+  color: #666666;
+}
+.countDownClockPanel .countDownClockProductItem .productInfoWrapper .productInfo .priceAndStockWrapper .stock .stockNumber {
+  color: #ff8100;
+  font-size: 20px;
+  font-family: "65Group Roboto Bold";
+}
+.countDownClockPanel .countDownClockProductItem .souldOutWrapper {
+  position: absolute;
+  z-index: 2;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.countDownClockPanel .countDownClockProductItem .souldOutWrapper .soldOut {
+  width: 136px;
+  height: 136px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 68px;
+  line-height: 136px;
+  height: 136px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 34px;
+  color: white;
+  position: relative;
+  top: 127px;
+  left: 127px;
+}
+.countDownClockPanel .countDownClockProductItem .souldOutWrapper .soldOut .text {
+  line-height: 34px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/*# sourceMappingURL=countdownclock.css.map */
