@@ -48,12 +48,12 @@ fs.readdir(joindir('view'),function(err, files){
         console.log('[webpack:build]', stats.toString({
             chunks: false, // Makes the build much quieter
             colors: true
-        }));
-      });
+        }))
+      })
     }else{
       console.log('没有那个模块，请擦亮钛合金')
     }
-    rl.close();
+    rl.close()
   })
 })
 

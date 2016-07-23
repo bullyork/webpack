@@ -1,18 +1,20 @@
 'use strict'
 
+process.env.NODE_ENV='development'
+
 const fs = require("fs")
 const path = require('path')
+const express = require('express')
 const joindir = p => path.join(__dirname, p)
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-let config = require('./webpack.build')
-const commons = ['babel/polyfill', 'whatwg-fetch']
 const webpack = require("webpack")
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const readline = require('readline')
-process.env.NODE_ENV='production'
+const app = express()
+const commons = ['webpack-hot-middleware/client', 'babel/polyfill', 'whatwg-fetch']
+
+let config = require('./webpack.hot')
 
 fs.readdir(joindir('view'),function(err, files){
-   let toBuildArray = []
+   var toBuildArray = []
    console.log('可编译模块：')
    if (err) {
        return console.error(err);
@@ -31,24 +33,22 @@ fs.readdir(joindir('view'),function(err, files){
    rl.question('which do you want to compile? ', (answer) => {
     const toBuildString = toBuildArray.join(',')
     if(toBuildString.indexOf(answer)!= -1){
-      console.log('build the module:', answer);
+      console.log('hot build the module:', answer);
       config.entry[answer] = [...commons, joindir('view/'+answer)]
-      config.plugins = [
-        new ExtractTextPlugin('[name].css'),
-        new HtmlWebpackPlugin({ 
-            inject: false,
-            key:answer,
-            filename: answer+'.html',
-            template: 'template/template.html'
-        })
-      ]
-      webpack(config, function(err, stats) {
-        if (err) { console.log('webpack:build', err) }
-        console.log('[webpack:build]', stats.toString({
-            chunks: false, // Makes the build much quieter
-            colors: true
-        }));
-      });
+      const compiler = webpack(config)
+      app.use(require('webpack-dev-middleware')(compiler, {
+        publicPath: config.output.publicPath,
+        noInfo: true
+      }))
+      app.use(require('webpack-hot-middleware')(compiler))
+      app.use(express.static(__dirname))
+      app.listen(8090, err => {
+        if (err) {
+          return console.error(err)
+        }
+
+        console.info('Listening at http://localhost:8090')
+      })
     }else{
       console.log('没有那个模块，请擦亮钛合金')
     }
