@@ -32,7 +32,7 @@ fs.readdir(joindir('view'),function(err, files){
     })
    rl.question('which do you want to compile? ', (answer) => {
     const toBuildString = toBuildArray.join(',')
-    if(toBuildString.indexOf(answer)!= -1){
+    if(toBuildString.indexOf(answer)!= -1 && !!answer){
       console.log('hot build the module:', answer);
       config.entry[answer] = [...commons, joindir('view/'+answer)]
       const compiler = webpack(config)
