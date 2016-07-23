@@ -1,15 +1,16 @@
 'use strict'
+process.env.NODE_ENV='production'
 
 const fs = require("fs")
 const path = require('path')
 const joindir = p => path.join(__dirname, p)
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-let config = require('./webpack.build')
 const commons = ['babel/polyfill', 'whatwg-fetch']
 const webpack = require("webpack")
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const readline = require('readline')
-process.env.NODE_ENV='production'
+
+let config = require('./webpack.build')
 
 fs.readdir(joindir('view'),function(err, files){
    let toBuildArray = []
