@@ -44,7 +44,7 @@ module.exports = {
       loader: 'url?limit=8192&name=font/[name].[ext]' 
     }, {
       test: /\.(jpe?g|png|gif|svg)$/i,
-      loader: 'url?limit=10000!img?progressive=true'
+      loader: 'url?limit=10000&name=img/[name].[ext]!img?progressive=true'
     }, { 
       test: /\.json$/,
       loader:"json"

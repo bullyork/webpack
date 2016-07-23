@@ -1,5 +1,8 @@
 npm-debug.log
 node_modules/
-build/
+build/font
+build/img
+build/js
+build/*.html
 dest/
 dist/
