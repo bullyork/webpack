@@ -42,7 +42,7 @@ class QiniuImageUploadButton extends Component{
 					onOk={this.onOkHandler}
 					onCancel={()=>{this.setState({modalVisible:false,uploadFileList:[]});}}>
 		          <p>Please choose a image file</p>
-		          <Upload {...fileUploadProps} fileList={this.state.uploadFileList} onChange={this.onUploadChangeHandler} data={{token:this.props.uptoken}}>
+		          <Upload {...fileUploadProps} showUploadList={false} onChange={this.onUploadChangeHandler} data={{token:this.props.uptoken}}>
 		          	<Button type="ghost">
 				      <Icon type="upload" /> Click to choose file
 				    </Button>

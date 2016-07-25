@@ -1,11 +1,12 @@
 import React,{Component} from 'react'
 import { connect } from 'react-redux'
 import store from '../../store/d2d'
-import { Form, Input, Table, Button, Modal, message } from 'antd'
+import { Form, Input, Table, Button, Modal, message, Spin, Row, Col, Icon } from 'antd'
 import { Link } from "react-router"
 import { getZipGroups, addZipGroup, editZipGroup, updateZipGroup, deleteZipGroup, cancelEdit, openDialog, closeDialog } from '../../action/d2d'
 
 const FormItem = Form.Item
+const ButtonGroup = Button.Group
 
 const formItemLayout = {
   labelCol: { span: 6 },
@@ -31,31 +32,35 @@ const columns = [{
   width: 200,
   render (text, record) {
     return (
-      <div>
-        <Button style={{marginLeft: 5}} onClick={()=>{store.dispatch(editZipGroup(record.id))}}>Edit</Button>
-        <Button style={{marginLeft: 5}} onClick={()=>{confirm("Are you sure wanna delete?") && store.dispatch(deleteZipGroup(record.id, ()=>{store.dispatch(getZipGroups())}))}}>Delete</Button>
+      <div style={{ width: 100 }}>
+        <ButtonGroup>
+          <Button
+            onClick={() => {store.dispatch(editZipGroup(record.id))}}
+            type="primary">
+            <Icon type="edit" />
+          </Button>
+          <Button
+            onClick={()=>{confirm("Are you sure wanna delete?") && store.dispatch(deleteZipGroup(record.id, ()=>{store.dispatch(getZipGroups())}))}}
+            type="primary">
+            <Icon type="delete" />
+          </Button>
+        </ButtonGroup>
       </div>
     )
   }
 }]
 
 @connect(state => ({zipGroups: state.zipGroups}))
-class Main extends Component {
+class Main extends Component {  
 
-  componentDidMount() {
-      if (this.props.zipGroups.length === 0) this.props.dispatch(getZipGroups())
-  }
-
-  onPageChange(n) {
-    const { dispatch, zipGroups } = this.props
-    if (n * 10 >= zipGroups.length) {
-      const hide = message.loading('loading more ...')
-      dispatch(getZipGroups(zipGroups.length, 20, hide))
-    }
+  componentWillMount() {
+      this.props.dispatch(getZipGroups())
   }
 
   render () {
-    const ds = this.props.zipGroups.map((zipGroup) => {
+    const { zipGroups } = this.props
+
+    const ds = zipGroups.map((zipGroup) => {
       return {
         id: zipGroup.ID,
         name: zipGroup.name,
@@ -64,14 +69,28 @@ class Main extends Component {
     })
 
     const pagination = {
-      size: ds.length,
-      onChange: this.onPageChange.bind(this)
+      size: ds.length
     }
 
     return (
       <div>
-        <Button type="primary" style={{marginBottom: 5}} onClick={ this.create.bind(this) }>Create</Button>
-        <Table dataSource={ds} pagination={pagination} columns={columns} />
+        <Table dataSource={ds} pagination={pagination} rowKey={row => row.id} columns={columns} />
+        <div style={{
+          marginBottom: 60
+        }}>
+          <Row type="flex" justify="center">
+            <Col span={'1'}>
+              <Button
+                type="primary"
+                shape="circle"
+                size="large"
+                onClick={this.create.bind(this)}
+              >
+                <Icon type="plus" />
+              </Button>
+            </Col>
+          </Row>
+        </div>
 
         <AddZipGroupDialog />
         <EditZipGroupDialog />

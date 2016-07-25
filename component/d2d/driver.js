@@ -5,7 +5,9 @@ import store from '../../store/d2d'
 import { redirect } from '../../util/history'
 import { Form, Input, InputNumber, Table, Button, Modal, Checkbox, Cascader } from 'antd'
 import { Link } from "react-router"
-import { getDrivers, getZipGroups, addDriver, editDriver, editArea, cancelEdit, updateDriver, deleteDriver, openDialog, closeDialog, moveMarker } from '../../action/d2d'
+import shifts from './shifts'
+import { getDrivers, getZipGroups, addDriver, editDriver, editArea, cancelEdit, updateDriver, deleteDriver, openDialog, closeDialog, moveMarker, changeShift } from '../../action/d2d'
+import { initGoogleApi } from './tools'
 
 const FormItem = Form.Item
 const CheckboxGroup = Checkbox.Group
@@ -17,94 +19,9 @@ const formItemLayout = {
 
 const allShifts = ['day', 'night', 'big']
 
-const options = [{
-  value: 'sg',
-  label: 'sg',
-  children: [{
-    value: 'day',
-    label: 'day'
-  },{
-    value: 'night',
-    label: 'night'
-  },{
-    value: 'big',
-    label: 'big'
-  }]
-}]
-
-const columns = [{
-  title: 'DriverName',
-  dataIndex: 'name',
-  key: 'name',
-  width: 150,
-},{
-  title: 'Phone',
-  dataIndex: 'telephone',
-  key: 'telephone',
-  width: 150,
-},{
-  title: 'Shifts',
-  dataIndex: 'shifts',
-  key: 'shifts',
-  width: 150,
-  render (text) {
-    return text ? text.join(' ') : ''
-  }
-},{
-  title: 'Latitude',
-  dataIndex: 'latitude',
-  key: 'latitude',
-  width: 150,
-  render (text) {
-    return text.toFixed(6)
-  }
-},{
-  title: 'Longitude',
-  dataIndex: 'longitude',
-  key: 'longitude',
-  width: 150,
-  render (text) {
-    return text.toFixed(6)
-  }
-},{
-  title: 'Area',
-  dataIndex: 'postCodes',
-  key: 'postCodes',
-  width: 500,
-  render (text, record) {
-    return text ? text.join(',') : ''
-  }
-},{
-  title: 'Remark',
-  dataIndex: 'remark',
-  key: 'remark',
-  width: 200
-},{
-  title: 'Load',
-  dataIndex: 'maxWeight',
-  key: 'maxWeight',
-  width: 100
-},{
-  title: 'Operation',
-  key: 'operation',
-  width: 350,
-  render (text, record) {
-    return (
-      <div>
-        <Button style={{marginLeft: 5}} onClick={()=>{store.dispatch(editDriver(record))}}>Edit</Button>
-        <Button style={{marginLeft: 5}} onClick={()=>{
-          store.dispatch(editArea(record.driverNo))
-          redirect(`/editArea/${record.driverNo}`) 
-        }}>Edit Area</Button>
-        <Button style={{marginLeft: 5}} onClick={()=>{confirm("Are you sure wanna delete?") && store.dispatch(deleteDriver(record.driverNo,() => {store.dispatch(getDrivers())}))}}>Delete</Button>
-      </div>
-    )
-  }
-}]
-
 const initSpot = {lat: 1.377243, lng: 103.838110}
 
-@connect(state => ({drivers: state.drivers}))
+@connect(state => ({drivers: state.drivers, shift: state.shift}))
 class Main extends Component {
 
   constructor(props) {
@@ -114,28 +31,29 @@ class Main extends Component {
   }
 
   componentDidMount () {
-    this.props.dispatch(getDrivers())
+    this.fetchDrivers()
     this.props.dispatch(getZipGroups())
-
     //init google map
-    if (!window.google) {
-      let script = document.createElement('script')
-      script.src = 'https://maps.googleapis.com/maps/api/js?region=sg&signed_in=false&libraries=places&key=AIzaSyAbNGnfAzdIBl9lD1JMHyBWqU6LylDt03E'
-      document.body.appendChild(script)
-    }
+    initGoogleApi()
+  }
+
+  fetchDrivers() {
+    const { dispatch, shift } = this.props
+    dispatch(getDrivers({catalogCode: shift[0] || 'SG',shift: shift[1] || 'day'}))
   }
 
   onShiftChange(val) {
     const { dispatch } = this.props
     this.setState({loading: true})
-    dispatch(getDrivers({shift: val[1]}, () => {
+    dispatch(changeShift(val))
+    dispatch(getDrivers({catalogCode: val[0], shift: val[1]}, () => {
       this.setState({loading: false})
     }))
   }
 
   render () {
-    const {dispatch} = this.props
-    let ds = this.props.drivers.map(driver => {
+    const { dispatch, drivers, shift } = this.props
+    let ds = drivers.map(driver => {
       return {
         id: driver.driverNo,
         driverName: driver.name,
@@ -147,16 +65,94 @@ class Main extends Component {
       }
     })
 
+    const columns = [{
+      title: 'DriverName',
+      dataIndex: 'name',
+      key: 'name',
+      width: 150,
+    },{
+      title: 'Phone',
+      dataIndex: 'telephone',
+      key: 'telephone',
+      width: 150,
+    },{
+      title: 'Shifts',
+      dataIndex: 'shifts',
+      key: 'shifts',
+      width: 150,
+      render (text) {
+        return text ? text.join(' ') : ''
+      }
+    },{
+      title: 'Latitude',
+      dataIndex: 'latitude',
+      key: 'latitude',
+      width: 150,
+      render (text) {
+        return text.toFixed(6)
+      }
+    },{
+      title: 'Longitude',
+      dataIndex: 'longitude',
+      key: 'longitude',
+      width: 150,
+      render (text) {
+        return text.toFixed(6)
+      }
+    },{
+      title: 'Area',
+      dataIndex: 'postCodes',
+      key: 'postCodes',
+      width: 500,
+      render (text, record) {
+        return text ? text.join(',') : ''
+      }
+    },{
+      title: 'Remark',
+      dataIndex: 'remark',
+      key: 'remark',
+      width: 200
+    },{
+      title: 'Load',
+      dataIndex: 'maxWeight',
+      key: 'maxWeight',
+      width: 100
+    },{
+      title: 'Operation',
+      key: 'operation',
+      width: 350,
+      render (text, record) {
+        return (
+          <div>
+            <Button style={{marginLeft: 5}} onClick={()=>{dispatch(editDriver(record))}}>Edit</Button>
+            <Button style={{marginLeft: 5}} onClick={()=>{
+              store.dispatch(editArea(record.driverNo))
+              redirect(`/editArea/${record.driverNo}`) 
+            }}>Edit Area</Button>
+            <Button style={{marginLeft: 5}} onClick={() => {
+              confirm("Are you sure wanna delete?") && dispatch(deleteDriver(record.driverNo,() => {
+                dispatch(getDrivers({catalogCode: shift[0] || 'SG', shift: shift[1] || 'day'}))
+              }))
+            }}>Delete</Button>
+          </div>
+        )
+      }
+    }]
+
+    const pagination = {
+      size: ds.length
+    }
+
     return (
       <div>
         <div>
           <Button type="primary" style={{marginBottom: 5}} onClick={() => {dispatch(openDialog('addDriverDialog'))}}>Add Driver</Button>
-          <Cascader placeholder="Show All" options={options} style={{float: 'right'}} displayRender={label => label.join('-')} onChange={this.onShiftChange.bind(this)}/>
+          <Cascader placeholder="Show All" options={shifts} style={{float: 'right'}} allowClear={false} displayRender={label => label.join('-')} value={this.props.shift} onChange={this.onShiftChange.bind(this)}/>
         </div>
-        <Table pagination={false} loading={this.state.loading} rowKey={record => record.driverNo} dataSource={this.props.drivers} columns={columns} />
+        <Table pagination={pagination} loading={this.state.loading} rowKey={record => record.driverNo} dataSource={drivers} columns={columns} />
 
-        <AddDriverDialog />
-        <EditDriverDialog />
+        <AddDriverDialog fetchDrivers={this.fetchDrivers.bind(this)} />
+        <EditDriverDialog fetchDrivers={this.fetchDrivers.bind(this)} />
       </div>
     )
   }
@@ -190,13 +186,13 @@ class AddDriverDialog extends Component {
   }
 
   onOk () {
-    const { dispatch } = this.props
+    const { dispatch, fetchDrivers } = this.props
     this.refs.editPanel.validateFieldsAndScroll((error, driver)=>{
       if (!!error) return
 
       dispatch(addDriver(Object.assign({}, driver, {telephone: parseInt(driver.telephone) + '', catalogCode: 'SG', shifts: driver.shifts.split(' '), latitude: parseFloat(driver.latitude), longitude:parseFloat(driver.longitude), maxWeight: parseFloat(driver.maxWeight)}),(msg)=>{
         this.refs.editPanel.resetFields()
-        dispatch(getDrivers())
+        fetchDrivers()
         dispatch(closeDialog('addDriverDialog'))
       }))
     })
@@ -231,13 +227,13 @@ class EditDriverDialog extends Component {
   }
 
   onOk () {
-    const { dispatch } = this.props
+    const { dispatch, fetchDrivers } = this.props
     this.refs.editPanel.validateFieldsAndScroll((error, driver) => {
       if (!!error) return
 
       dispatch(updateDriver(Object.assign({}, this.props.editingDriver, driver, {shifts: driver.shifts.split(' '), latitude: parseFloat(driver.latitude), longitude: parseFloat(driver.longitude), maxWeight: parseFloat(driver.maxWeight), telephone: parseInt(driver.telephone) + ''}),() => {
         this.refs.editPanel.resetFields()
-        dispatch(getDrivers())
+        fetchDrivers()
         dispatch(cancelEdit())
       }))
     })

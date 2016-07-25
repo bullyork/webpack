@@ -1,0 +1,8 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 50 50" width="50" height="50">
+     <path fill="hsl(108, 33%, 50%)" d="M7.2,18.5C7.2,28.3,25,49.2,25,49.2V0.8C15.2,0.8,7.2,8.7,7.2,18.5z"/>
+     <path fill="hsl(108, 33%, 50%)" d="M25,0.8v48.5c0,0,17.8-20.9,17.8-30.7S34.8,0.8,25,0.8z"/>
+     <circle fill="#FFFFFF" cx="25" cy="18.3" r="9.6"/>
+      <text fill="hsl(108, 33%, 50%)" text-anchor="middle" transform="matrix(1 0 0 1 25 22.4568)" font-size="12" style="font-family: Microsoft YaHei, Open Sans, sans-serif, Hiragino Sans GB, Arial, Lantinghei SC, STHeiti, WenQuanYi Micro Hei, SimSun;">
+        63
+      </text>
+    </svg>

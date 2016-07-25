@@ -7,17 +7,20 @@ import { Form, Input, Table, Button, Modal, Transfer } from 'antd'
 @connect(state => ({zipGroups: state.zipGroups, driver: state.drivers.find(driver => driver.driverNo === state.editingDriverId)}))
 class Main extends Component {
 
-  componentWillMount() {
-    // this.props.dispatch(getZipGroups())     
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+      mockData: [],
+      targetKeys: []
+    }
   }
 
+  componentDidMount() {
+    // this.getMock()     
+  }
 
-  render () {
-    const driver = this.props.driver
-    const ds =  this.props.zipGroups ? this.props.zipGroups.map(zg => ({key: zg.ID, text: zg.name + '(' + zg.postCodes.join(',') + ')'})) : []
-    const tks = driver.postCodeGroups ? driver.postCodeGroups.map(zg => zg.ID) : []
-
-    //mockdata
+  getMock() {
     const targetKeys = []
     const mockData = []
     for (let i = 0; i < 20; i++) {
@@ -32,24 +35,46 @@ class Main extends Component {
       }
       mockData.push(data)
     }
+    this.setState({ mockData, targetKeys })
+  }
+
+  render () {
+    const { zipGroups, driver } = this.props
+
+    const ds = zipGroups ? zipGroups.map(zg => ({key: zg.ID, text: zg.name + '(' + zg.postCodes.join(',') + ')'})) : []
+    const tks = driver.postCodeGroups ? driver.postCodeGroups.map(zg => zg.ID) : []
 
     return (
-      <div>
-        <Transfer
-          rowKey={record => record.ID}
-          dataSource={ds}
-          showSearch
-          titles={['Zip Group List', 'Deliver Area']}
-          listStyle={{
-            width: 500,
-            height: 800
-          }}
-          onChange={this.handleChange.bind(this)}
-          targetKeys={tks}
-          render={item => item.text}
-        />
-      </div>
+      <Transfer
+        dataSource={ds}
+        targetKeys={tks}
+        onChange={this.handleChange.bind(this)}
+        title={['Zip Group List', 'Delivery Area']}
+        listStyle={{
+          width: 500,
+          height: 800
+        }}
+        showSearch
+        render={item => item.text}
+      />
     )
+    // return (
+    //   <div>
+    //     <Transfer
+    //       rowKey={record => record.ID}
+    //       dataSource={ds}
+    //       showSearch
+    //       titles={['Zip Group List', 'Deliver Area']}
+    //       listStyle={{
+    //         width: 500,
+    //         height: 800
+    //       }}
+    //       onChange={this.handleChange.bind(this)}
+    //       targetKeys={tks}
+    //       render={item => item.text}
+    //     />
+    //   </div>
+    // )
   }
 
   handleChange (targetKeys) {

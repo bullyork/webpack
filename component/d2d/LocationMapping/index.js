@@ -12,6 +12,7 @@ import {
 	Modal
 } from 'antd'
 import Fetch from 'fetch.io'
+import { initGoogleApi } from '../tools'
 
 const ButtonGroup = Button.Group
 const FormItem = Form.Item
@@ -63,12 +64,7 @@ class LocationMapping extends Component {
 	}
 
 	initGoogleMap() {
-		if (!window.google) {
-			const script = document.createElement('script')
-			script.src = 'https://maps.googleapis.com/maps/api/js?region=sg&libraries=places&language=zh-CN&signed_in=false&key=AIzaSyCRnxKr5e6cr1Evt0Evn9l3w76W3c96VcY'
-
-			document.body.appendChild(script)
-		}
+		initGoogleApi()
 	}
 
 	createMap() {
@@ -380,6 +376,7 @@ class LocationMapping extends Component {
 									<FormItem
 										{...formItemLayout}
 										label={elm}
+										key={elm}
 									>
 										<Input
 											{...getFieldProps(name)}
@@ -403,7 +400,7 @@ class LocationMapping extends Component {
 													if (!isNaN(Number(code)) && code.length === 6) {
 														let hide = message.loading('searching for the code...', 0)
 														this.placeService.textSearch({
-															query: code
+															query: code + 'Singapore'
 														},(places, status) => {
 															hide()
 															if (status === google.maps.places.PlacesServiceStatus.OK) {

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div v-for="i in 120">
+      <img v-for="j in 99" :src="getSrc(i,j)" alt="">
+    </div>
+  </div>
+  <!-- <img src='./cargo0_0.svg'/>
+  <img src='./cargo0_1.svg'/>
+  <img src='./cargo0_2.svg'/> -->
+</body>
+<script src="http://cdn.bootcss.com/vue/1.0.24/vue.min.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: function() {
+      return {
+        msg: 'Hello'
+      }
+    },
+    methods: {
+      getSrc: function(i, j) {
+        return "cargo" + i + '_' + j + ".svg"
+      }
+    }
+  })
+</script>
+</html>

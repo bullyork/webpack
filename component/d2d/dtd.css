@@ -2,3 +2,7 @@
   width: 100%;
   height: 300px;
 }
+
+.ant-input-wrapper input[readonly] {
+  background: hsla(0,0%,100%,0)!important;
+}
