@@ -41,7 +41,7 @@ fs.readdir(joindir('view'),function(err, files){
         noInfo: true
       }))
       app.use(require('webpack-hot-middleware')(compiler))
-      app.use(express.static(__dirname))
+      app.use(express.static(path.resolve(__dirname,'build')))
       app.listen(8090, err => {
         if (err) {
           return console.error(err)
