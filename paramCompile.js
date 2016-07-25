@@ -16,6 +16,11 @@ let config = require('./webpack.build')
 
 config.entry[name] = [...commons, joindir('view/'+name)]
 config.plugins = [
+  new webpack.optimize.UglifyJsPlugin({
+      compress: {
+          warnings: false
+      }
+  }),
   new ExtractTextPlugin('[name].css'),
   new HtmlWebpackPlugin({ 
       inject: false,
