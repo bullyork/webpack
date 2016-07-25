@@ -11,6 +11,8 @@ const joindir = p => path.join(__dirname, p)
 const commons = ['babel/polyfill', 'whatwg-fetch']
 
 module.exports = {
+  devtool: 'source-map',
+  
   entry: {
   },
 
