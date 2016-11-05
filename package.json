@@ -1,0 +1,26 @@
+{
+  "name": "webpack base project",
+  "version": "1.0.0",
+  "description": "base webpack project",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bullyork/webpack.git"
+  },
+  "keywords": [
+    "webpack",
+    "ES6"
+  ],
+  "author": "zyf",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/bullyork/webpack/issues"
+  },
+  "homepage": "https://github.com/bullyork/webpack#readme",
+  "devDependencies": {
+    "webpack": "^1.13.3"
+  }
+}
