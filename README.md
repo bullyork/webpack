@@ -1,3 +1,4 @@
 # webpack
-webpack hot compile
-解决多个模块编译问题
+* 最简的webpack开发基础工程结构
+* 支持热编译
+* 支持ES6
