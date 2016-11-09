@@ -16,14 +16,16 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js', '.scss']
+    extensions: ['', '.js', '.scss', '.ts']
   },
 
   module: {
-    loaders: [{
-      test: /\.jsx?$/,
-      loader: 'babel',
-      exclude: /node_modules/,
+    loaders: [{ 
+      test: /\.tsx?$/,
+      loader: "ts-loader",
+    },{
+      test: /\.js$/,
+      loader: "source-map-loader",
     }]
   },
 }
