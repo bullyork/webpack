@@ -1,31 +1,31 @@
 
-'use strict'
-const webpack = require('webpack')
-const path = require('path')
+'use strict';
+const webpack = require('webpack');
+const path = require('path');
 
-const joindir = p => path.join(__dirname, p)
+const joindir = p => path.join(__dirname, p);
 
 module.exports = {
   devtool: 'source-map',
   entry: {
-    index:joindir('src/index')
+    index: joindir('src/index'),
   },
   output: {
     path: joindir('build'),
-    filename: '[name].js'
+    filename: '[name].js',
   },
 
   resolve: {
-    extensions: ['', '.js', '.scss', '.ts']
+    extensions: ['', '.js', '.scss', '.ts'],
   },
 
   module: {
-    loaders: [{ 
+    loaders: [{
       test: /\.tsx?$/,
-      loader: "ts-loader",
-    },{
+      loader: 'ts-loader',
+    }, {
       test: /\.js$/,
-      loader: "source-map-loader",
-    }]
+      loader: 'source-map-loader',
+    }],
   },
-}
+};
