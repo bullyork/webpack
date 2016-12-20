@@ -1,4 +1,3 @@
 # webpack
-- [x] 最简的webpack开发基础工程结构
-- [x] 支持ts
-- [x] 支持ES6
+- [x] 严格遵守redux，react-router原则，严格遵循react思想
+- [x] 使用lint，严格规范代码

@@ -14,7 +14,10 @@ module.exports = {
     path: joindir('build'),
     filename: '[name].js',
   },
-
+  externals: {
+    react: 'React',
+    antd: 'antd',
+  },
   resolve: {
     extensions: ['', '.js', '.scss', '.ts'],
   },
