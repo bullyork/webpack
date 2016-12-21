@@ -22,5 +22,11 @@ module.exports = {
       path: path.join(__dirname, 'src/dist', '[name]-manifest.json'),
       name: '[name]_library',
     }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production'),
+      },
+    }),
+    new webpack.optimize.UglifyJsPlugin(),
   ],
 };
