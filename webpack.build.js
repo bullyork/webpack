@@ -1,34 +1,31 @@
-
-'use strict';
 const webpack = require('webpack');
-const path = require('path');
-
-const joindir = p => path.join(__dirname, p);
-
 module.exports = {
-  devtool: 'source-map',
   entry: {
-    index: joindir('src/index'),
+    app: './src/view/index.ts',
   },
   output: {
-    path: joindir('build'),
+    path: __dirname + 'src/dist',
     filename: '[name].js',
+    publicPath: '/',
   },
-  externals: {
-    react: 'React',
-    antd: 'antd',
-  },
-  resolve: {
-    extensions: ['', '.js', '.scss', '.ts'],
-  },
-
   module: {
     loaders: [{
       test: /\.tsx?$/,
       loader: 'ts-loader',
     }, {
+      test: /\.jsx?$/,
+      loader: 'babel-loader',
+    }, {
       test: /\.js$/,
       loader: 'source-map-loader',
     }],
   },
+  devtool: '#source-map',
+  context: __dirname,
+  plugins: [
+    new webpack.DllReferencePlugin({
+      context: __dirname,
+      manifest: require('./src/dist/vendor-manifest.json'),
+    }),
+  ],
 };
