@@ -1,4 +1,3 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-console.log(React);
-console.log(ReactDOM);
+console.log(1111)
+console.log(2222)
+console.log(7777)
