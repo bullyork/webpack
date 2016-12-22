@@ -4,7 +4,7 @@ const hotMiddlewareScript
 module.exports = {
   entry: {
     app: [
-      './src/view/index.ts',
+      './src/view/index.tsx',
       hotMiddlewareScript,
     ],
   },
@@ -17,14 +17,10 @@ module.exports = {
     loaders: [{
       test: /\.tsx?$/,
       loader: 'ts-loader',
-    }, {
-      test: /\.jsx?$/,
-      loader: 'babel-loader',
-    }, {
-      test: /\.js$/,
-      loader: 'source-map-loader',
     }],
+    preLoaders: [{ test: /\.js$/, loader: 'source-map-loader' }],
   },
+  extensions: ['', '.js', '.tsx', '.scss', '.ts'],
   devtool: '#source-map',
   context: __dirname,
   plugins: [

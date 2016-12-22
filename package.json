@@ -23,6 +23,12 @@
   },
   "homepage": "https://github.com/bullyork/webpack#readme",
   "devDependencies": {
+    "@types/classnames": "0.0.32",
+    "@types/history": "^2.0.41",
+    "@types/react": "^0.14.55",
+    "@types/react-dom": "^0.14.19",
+    "@types/react-redux": "^4.4.35",
+    "@types/react-router": "^2.0.41",
     "babel": "^6.5.2",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.7",
