@@ -1,8 +1,10 @@
-import { Button, Checkbox, Popover } from 'antd';
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import "babel-polyfill";
 
-ReactDOM.render(
-    <Button>test</Button>,
-    document.getElementById("container"),
+import React from "react";
+import { render } from "react-dom";
+import Root from "./containers/Root";
+
+render(
+  <Root />,
+  document.getElementById("root"),
 );

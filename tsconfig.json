@@ -2,6 +2,7 @@
   "compileOnSave": false,
   "buildOnSave": false,
   "compilerOptions": {
+    "strictNullChecks": true,
     "moduleResolution": "node",
     "module": "commonjs",
     "target": "es5",
