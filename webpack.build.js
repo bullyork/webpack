@@ -1,28 +1,28 @@
-const webpack = require("webpack");
+const webpack = require('webpack');
 module.exports = {
   entry: {
-    app: "./src/view/index.ts",
+    app: ['whatwg-fetch', './src/view/index.ts'],
   },
   output: {
-    path: __dirname + "src/dist",
-    filename: "[name].js",
-    publicPath: "/",
+    path: __dirname + 'src/dist',
+    filename: '[name].js',
+    publicPath: '/',
   },
   module: {
     loaders: [{
       test: /\.tsx?$/,
-      loader: "ts-loader",
+      loader: 'ts-loader',
     }, {
       test: /\.js$/,
-      loader: "source-map-loader",
+      loader: 'source-map-loader',
     }],
   },
-  devtool: "#source-map",
+  devtool: '#source-map',
   context: __dirname,
   plugins: [
     new webpack.DllReferencePlugin({
       context: __dirname,
-      manifest: require("./src/dist/vendor-manifest.json"),
+      manifest: require('./src/dist/vendor-manifest.json'),
     }),
   ],
 };

@@ -4,6 +4,7 @@ const hotMiddlewareScript
 module.exports = {
   entry: {
     app: [
+      'whatwg-fetch',
       './src/view/index.tsx',
       hotMiddlewareScript,
     ],

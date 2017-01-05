@@ -13,7 +13,10 @@
     "removeComments": false,
     "sourceMap": false,
     "inlineSourceMap": true,
-    "noEmitHelpers": true
+    "noEmitHelpers": true,
+    "typeRoots": [
+      "./node_modules/@types", "./types"
+    ]
   },
   "awesomeTypescriptLoaderOptions": {
     "useBabel": true,
