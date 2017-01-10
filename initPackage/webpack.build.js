@@ -1,31 +1,28 @@
-
-'use strict'
-const webpack = require('webpack')
-const path = require('path')
-
-const joindir = p => path.join(__dirname, p)
-
+const webpack = require('webpack');
 module.exports = {
-  devtool: 'source-map',
   entry: {
-    index:joindir('src/index')
+    app: ['whatwg-fetch', './src/view/index.ts'],
   },
   output: {
-    path: joindir('build'),
-    filename: '[name].js'
+    path: __dirname + 'src/dist',
+    filename: '[name].js',
+    publicPath: '/',
   },
-
-  resolve: {
-    extensions: ['', '.js', '.scss', '.ts']
-  },
-
   module: {
-    loaders: [{ 
+    loaders: [{
       test: /\.tsx?$/,
-      loader: "ts-loader",
-    },{
+      loader: 'ts-loader',
+    }, {
       test: /\.js$/,
-      loader: "source-map-loader",
-    }]
+      loader: 'source-map-loader',
+    }],
   },
-}
+  devtool: '#source-map',
+  context: __dirname,
+  plugins: [
+    new webpack.DllReferencePlugin({
+      context: __dirname,
+      manifest: require('./src/dist/vendor-manifest.json'),
+    }),
+  ],
+};
